@@ -5,6 +5,9 @@
 >
 
   <form method="POST" class="grid grid-cols-1 gap-6"> 
+
+  <?php include $this->resolve('paritals/_csrf.php');?>
+
     <!-- Email -->
     <label class="block">
       <span class="text-gray-700">Email address</span>
@@ -43,7 +46,7 @@
       >
         <option value="USA">USA</option>
         <option value="Canada" <?php echo $oldFormData['country'] === 'Canada' ? 'selected' : ''; ?>>Canada</option>
-        <option value="Mexico" <?php echo $oldFormData['country'] === 'Mexico' ? 'selected' : ''; ?> >Mexico</option>
+        <option value="Mexico" <?php echo $oldFormData['country'] === 'Mexico' ? 'selected' : ''; ?>>Mexico</option>
         <option value="Invalid">Invalid Country</option>
       </select>
       <?php if(array_key_exists('country', $errors)) :  ?>
